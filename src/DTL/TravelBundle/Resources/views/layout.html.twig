@@ -1,0 +1,33 @@
+{% extends "::base.html.twig" %}
+{% block style %}
+.content {
+    background-image: url({{ asset('images/backgrounds/' ~ random([1,2,3]) ~ '.JPG') }})
+}
+{% endblock style %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="/css/reset-min.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+{% endblock %}
+{% block title %}
+Dans Travel Page the Fif
+{% endblock %}
+{% block body %}
+<div class="wrapper">
+    <div class="header">
+        <h1>Dans Travel Site</h1>
+        <h2>Riding about on a bicycle and doing PHP</h2>
+    </div>
+
+    <div class="spacer">
+        &nbsp;
+    </div>
+
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <div class="footer">
+    </div>
+</div>
+{% endblock body %}

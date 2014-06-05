@@ -1,0 +1,14 @@
+{% extends "DTLTravelBundle::layout.html.twig" %}
+{% block content %}
+<h2>{{ resource.title }}</h2>
+<ul>
+    {% for voyage in resource.voyages %}
+    <div class="box">
+        <a class="title" href="{{ path(voyage) }}">{{ voyage.name }}</a>
+        <div class="body">
+            {{ voyage.description }}
+        </div>
+    </div>
+    {% endfor %}
+</ul>
+{% endblock content %}

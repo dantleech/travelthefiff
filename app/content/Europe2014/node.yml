@@ -1,0 +1,7 @@
+jcr:primaryType:
+    value: DTLTravel:voyage
+startDate:
+    type: date
+    value: "2014-04-21"
+description:
+    value: "Santander, Mnt Ventoux, Mnt Blanc, Pass di Simplone, blah blah blah"

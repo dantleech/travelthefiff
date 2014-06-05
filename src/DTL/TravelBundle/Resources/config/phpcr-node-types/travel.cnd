@@ -1,0 +1,28 @@
+<slinp = "http://slinp.org/ns/1.0">
+<DTLTravel = "http://dantleech.com/slinptravel/1.0">
+
+[DTLTravel:homepage] > slinp:resource
+- title (string)
+
+[DTLTravel:voyage] > slinp:resource
+- startDate (date)
+- endDate (date)
+- description (string) mandatory
++ * (DTLTravel:date)
+
+[DTLTravel:date] > slinp:resource
+- date (date) mandatory
++ startPosition (DTLTravel:longlat)
++ endPosition (DTLTravel:longlat)
+
+[DTLTravel:ride] > nt:base
+- meters (long)
+- seconds (long)
+- maxSpeed (long)
+
+[DTLTravel:poi]
++ position (DTLTravel:longlat)
+
+[DTLTravel:longlat]
+- long (double)
+- lat (double)
