@@ -10,19 +10,34 @@
 - description (string) mandatory
 + * (DTLTravel:date)
 
-[DTLTravel:date] > slinp:resource
-- date (date) mandatory
-+ startPosition (DTLTravel:longlat)
-+ endPosition (DTLTravel:longlat)
+[DTLTravel:year] > slinp:resource
++ * (DTLTravel:month)
 
-[DTLTravel:ride] > nt:base
+[DTLTravel:month] > slinp:resource
++ * (DTLTravel:day)
+
+[DTLTravel:day] > slinp:resource
++ * (DTLTravel:artifact)
++ photos (DTLTravel:photoFolder) autocreated
+
+[DTLTravel:photoFolder] > nt:hierarchyNode
++ * (nt:file)
+
+[DTLTravel:artifact] > nt:unstructured
+
+[DTLTravel:journey] > DTLTravel:artifact
 - meters (long)
 - seconds (long)
-- maxSpeed (long)
+- maxSpeed (double)
++ startPosition (DTLTravel:position)
++ endPosition (DTLTravel:position)
 
-[DTLTravel:poi]
-+ position (DTLTravel:longlat)
+[DTLTravel:journal] > nt:base
+- text (string)
 
-[DTLTravel:longlat]
+[DTLTravel:poi] > DTLTravel:artifact
++ position (DTLTravel:position)
+
+[DTLTravel:position]
 - long (double)
 - lat (double)

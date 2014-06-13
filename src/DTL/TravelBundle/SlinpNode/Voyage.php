@@ -3,21 +3,22 @@
 namespace DTL\TravelBundle\SlinpNode;
 
 use Slinp\Bundle\SlinpBundle\SlinpNode\Resource;
+use Slinp\Bundle\SlinpBundle\SlinpNode\Base;
 
-class Voyage extends Resource
+class Voyage extends Base
 {
     public function getName()
     {
-        return $this->getPhpcrNode()->getName();
+        return $this->_node()->getName();
     }
 
     public function getDescription()
     {
-        if ($this->getPhpcrNode()->hasProperty('description')) {
-            return $this->getPhpcrNode()->getPropertyValue('description');
-        }
+        return $this->_value('description');
+    }
 
-        return null;
+    public function getYears()
+    {
+        return $this->_children('DTLTravel:year');
     }
 }
-
